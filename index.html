@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="./dist/css/main.min.css">
+    <script src="https://kit.fontawesome.com/778dbac517.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wght@100;400;700&display=swap" rel="stylesheet">
+    <script src="./dist/js/main.min.js" defer></script>
+</head>
+
+<body>
+    <div class="app__background">
+        <div class="app__shadow"></div>
+
+        <h1 class="title"><i class="fa-solid fa-cloud"></i> Weather App</h1>
+
+        <div class="app">
+            <p class="app__city" id="city-name"></p>
+            <input type="text" placeholder="City name..." class="app__input" id="city-input">
+            <button class="app__button" id="checkBtn">Check</button>
+            <p class="app__error" id="app-error">Please complete correctly</p>
+
+            <div class="app__data">
+                <div class="app__data-weather">
+                    <p class="data-weather-title data-info">Weather:</p>
+                    <p class="data-weather-answer data-answer" id="weather-answer"></p>
+                </div>
+
+                <div class="app__data-temperature">
+                    <p class="data-temperature-title data-info">Temperature:</p>
+                    <p class="data-temperature-answer data-answer" id="temperature-answer"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

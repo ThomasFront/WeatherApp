@@ -1,0 +1,310 @@
+@use './utilities/colors' as *;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.6rem;
+	font-family: 'Anek Malayalam', sans-serif;
+	color: $text-color;
+}
+
+.data-info {
+	font-size: 2.5rem;
+}
+
+.data-answer {
+	margin-top: 0.4em;
+	font-size: 2.4rem;
+	font-weight: bold;
+}
+
+.fa-solid {
+	color: $cloud-color;
+	margin-right: 0.2em;
+}
+
+.title {
+	font-size: 3.8rem;
+	padding: 0.2em;
+	font-weight: normal;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.app {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 70vh;
+	z-index: 100;
+
+	&__button {
+		padding: 0.5em 1em;
+		font-family: 'Anek Malayalam', sans-serif;
+		font-weight: bold;
+		border-radius: 6px;
+		border: 1px solid $gray-color;
+		background-color: $btn-color;
+		cursor: pointer;
+		transition: background-color 0.2s;
+	}
+
+	&__button:hover {
+		background-color: $btn-hover;
+	}
+
+	&__background {
+		position: relative;
+		background-image: url('../../dist/img/small-bg.jpg');
+		width: 100vw;
+		height: 100vh;
+		z-index: 1;
+		background-size: cover;
+		background-position: 10%;
+	}
+
+	&__shadow {
+		position: absolute;
+		background-color: $app-color;
+		width: 100%;
+		height: 100%;
+		z-index: -2;
+	}
+
+	&__city {
+		font-size: 3.4rem;
+		font-weight: bold;
+		margin-bottom: 0.2em;
+	}
+
+	&__input {
+		margin-bottom: 2em;
+		font-size: 1.5rem;
+		padding: 0.5em 1.2em;
+		font-family: 'Anek Malayalam', sans-serif;
+		border-radius: 6px;
+		border: 1px solid $text-color;
+		z-index: 200;
+		box-shadow: 2px 2px 15px $text-color;
+
+		&:focus {
+			outline: 1px solid $app-color;
+		}
+	}
+
+	&__data {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 2em;
+	}
+
+	&__data-weather {
+		margin-right: 2em;
+	}
+
+	&__data-temperature,
+	&__data-weather {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
+
+	&__error {
+		visibility: hidden;
+		margin-top: 0.2em;
+		font-size: 1.2rem;
+		color: $error-color;
+	}
+}
+
+@media (min-width: 414px) {
+	.data-info {
+		font-size: 3rem;
+	}
+
+	.data-answer {
+		font-size: 2.8rem;
+	}
+
+	.title {
+		font-size: 4rem;
+		margin-bottom: 1em;
+	}
+
+	.app {
+		&__city {
+			font-size: 5rem;
+		}
+
+		&__input {
+			font-size: 2rem;
+		}
+
+		&__data-weather {
+			margin-right: 2em;
+		}
+
+		&__button {
+			font-size: 1.8rem;
+		}
+		&__error {
+			margin-top: 0.4em;
+			font-size: 1.3rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.data-info {
+		font-size: 5rem;
+	}
+
+	.data-answer {
+		font-size: 4.7rem;
+		margin-top: 0;
+	}
+
+	.fa-solid {
+		margin-right: 0.2em;
+	}
+
+	.title {
+		font-size: 6rem;
+	}
+
+	.app {
+		&__city {
+			font-size: 6rem;
+		}
+
+		&__input {
+			font-size: 2.4rem;
+			width: 60%;
+		}
+
+		&__data-weather {
+			margin-right: 9em;
+		}
+
+		&__data {
+			margin-top: 6em;
+		}
+		&__button {
+			margin-top: 0.1em;
+			font-size: 2.4rem;
+		}
+		&__error {
+			margin-top: 0.6em;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+@media (min-width: 1024px) {
+	.data-info {
+		font-size: 6rem;
+	}
+
+	.data-answer {
+		font-size: 6rem;
+		margin-top: 0.4em;
+	}
+
+	.fa-solid {
+		margin-right: 0.4em;
+	}
+
+	.title {
+		font-size: 7rem;
+		margin-bottom: 2em;
+	}
+
+	.app {
+		&__city {
+			font-size: 7rem;
+		}
+
+		&__input {
+			font-size: 2.9rem;
+			margin-bottom: 0;
+		}
+
+		&__data-weather {
+			margin-right: 16em;
+		}
+
+		&__data {
+			margin-top: 12em;
+		}
+		&__button {
+			margin-top: 2em;
+			font-size: 2.8rem;
+		}
+		&__error {
+			margin-top: 1em;
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.data-info {
+		font-size: 6rem;
+	}
+
+	.data-answer {
+		font-size: 6rem;
+		margin-top: 0;
+	}
+
+	.title {
+		font-size: 5rem;
+		margin-bottom: 1em;
+	}
+
+	.app {
+		&__city {
+			font-size: 6.2rem;
+		}
+
+		&__input {
+			font-size: 2.2rem;
+			width: 30%;
+			margin-bottom: 0;
+		}
+
+		&__data-weather {
+			margin-right: 20em;
+		}
+
+		&__data {
+			margin-top: 4em;
+		}
+
+		&__background {
+			background-image: url('../../dist/img/big-bg.jpg');
+			background-position: 10% 0%;
+		}
+
+		&__button {
+			margin-top: 2em;
+			font-size: 2rem;
+		}
+	}
+}
